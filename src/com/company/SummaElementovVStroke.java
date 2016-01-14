@@ -6,12 +6,13 @@ public class SummaElementovVStroke {
 
     public static void main(String[] args) {
 
-        //Посчитать сумму элементов двухмерного массива в строке
+        //РџРѕСЃС‡РёС‚Р°С‚СЊ СЃСѓРјРјСѓ СЌР»РµРјРµРЅС‚РѕРІ РґРІСѓС…РјРµСЂРЅРѕРіРѕ РјР°СЃСЃРёРІР° РІ СЃС‚СЂРѕРєРµ
 
         int[][] mas = new int[10][20];
         initMas(mas);
         printMas(mas);
-        sumVStroke(mas);
+        //sumVStroke(mas);
+        printOneMas(maxMas(mas));
     }
 
     public static void initMas(int[][] fmas) {
@@ -32,14 +33,32 @@ public class SummaElementovVStroke {
         }
     }
 
-    public static int sumVStroke(int[][] fmas) {
+    /*public static void sumVStroke(int[][] fmas) {
         int sum = 0;
         for (int i = 0; i < fmas.length; i++) {
             for (int j = 0; j < fmas[i].length; j++) {
                 sum = sum + fmas[i][j];
             }
-            System.out.println(sum);
+            System.out.println("СЃСѓРјРјР° СЌР»РµРјРµРЅС‚РѕРІ " + i + "-РѕР№ СЃС‚СЂРѕРєРё - " + sum);
         }
+    }*/
+
+    public static void printOneMas(int[] fmas) {
+        for (int i = 0; i < fmas.length; i++) {
+            //System.out.printf("%5d", fmas[i]);
+            System.out.println(fmas[i]);
+        }
+        //System.out.println();
+    }
+
+    public static int[] maxMas(int[][] fmas) {
+        int[] max = new int[fmas.length];
+        for (int i = 0; i < fmas.length; i++) {
+            for (int j = 0; j < fmas[i].length; j++) {
+                max[i] += fmas[i][j];
+            }
+        }
+        return max;
     }
 
 }
