@@ -2,13 +2,13 @@ package com.company;
 
 import java.util.Random;
 
-public class MaxSumOfElments {
+public class MaxSumOfAllElements {
 
     public static void main(String[] args) { //сполняемая функция, public - доступна для всех,
-    // static - можно вызвать метод сразу, без создания экземляра класса, void - ничего не возвращает
+        // static - можно вызвать метод сразу, без создания экземляра класса, void - ничего не возвращает
 
-        /*В массиве сравить попарно (1 со 2, 2 с 3, 3 с 4 и тд) элементы
-        и найти те 2, сумма которых максимальная.*/
+        /*В массиве сравить попарно (1 со 2, 1 с 3, 1 с 4 и тд) элементы и найти те 2,
+        сумма которых максимальная.*/
 
         int[] mas = new int[10];
 
@@ -38,11 +38,13 @@ public class MaxSumOfElments {
         int sum = fmas[0] + fmas[1];
         int maxI1 = 0;
         int maxI2 = 0;
-        for (int i = 0; i < fmas.length - 1; i++) {
-            if (fmas[i] + fmas[i + 1] > sum) {
-                sum = fmas[i] + fmas[i + 1];
-                maxI1 = i;
-                maxI2 = i + 1;
+        for (int i = 0; i < fmas.length; i++) {
+            for (int j = 0; j < fmas.length; j++) {
+                if ((i != j) && (fmas[i] + fmas[j] > sum)) {
+                    sum = fmas[i] + fmas[j];
+                    maxI1 = i;
+                    maxI2 = j;
+                }
             }
         }
         System.out.println("i1=" + maxI1 + " i2=" + maxI2 + " sum=" + sum);

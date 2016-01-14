@@ -1,26 +1,34 @@
 package com.company;
 
+import java.util.Random;
+
 public class DvuxmernijMassiv {
 
     public static void main(String[] args) {
 
-        int[][] mas = new int[10][5];
+        int[][] mas = new int[10][20];
 
-        for (int i = 0; i < 10; i++) {
-            for (int j = 0; j < 5; j++) {
-                mas[i][j] = 1;
+        initMas(mas);
+        printMas(mas);
+
+    }
+
+    public static void initMas(int[][] fmas) {
+        Random random = new Random();
+        for (int i = 0; i < fmas.length; i++) {
+            for (int j = 0; j < fmas[i].length; j++) {
+                fmas[i][j] = -50 + random.nextInt(100);
             }
         }
+    }
 
-
-        // Вывод массива
-
-        /*for (int i = 0; i < 5; i++) {
-            for (int j = 0; j < 10; j++) {
-
+    public static void printMas(int[][] fmas) {
+        for (int i = 0; i < fmas.length; i++) {
+            for (int j = 0; j < fmas[i].length; j++) {
+                System.out.printf("%5d", fmas[i][j]);
             }
-        }*/
-
+            System.out.println();
+        }
     }
 
 }
