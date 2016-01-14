@@ -18,7 +18,7 @@ public class MaxSumOfElments {
     public static void initMas(int[] fmas) {
         Random random = new Random();
         for(int i = 0; i < fmas.length; i++) {
-            fmas[i] = random.nextInt(100);
+            fmas[i] = -50 + random.nextInt(100);
         }
     }
 
